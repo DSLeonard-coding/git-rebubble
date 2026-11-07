@@ -1,0 +1,31 @@
+version = 1
+revision = 5
+requires-python = ">=3.14"
+
+[[package]]
+name = "dsleonard-qx"
+version = "1.2.1.dev4+g1c6d9c5ed"
+source = { git = "https://github.com/DSLeonard-coding/qx.git#1c6d9c5ed94d35601bc6d2d3d490b3143b92ed1c" }
+
+[[package]]
+name = "git-rebubble"
+source = { editable = "." }
+dependencies = [
+    { name = "dsleonard-qx" },
+]
+
+[package.dev-dependencies]
+dev = [
+    { name = "sync-hook" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "dsleonard-qx", git = "https://github.com/DSLeonard-coding/qx.git" }]
+
+[package.metadata.requires-dev]
+dev = [{ name = "sync-hook", directory = "sync_hook" }]
+
+[[package]]
+name = "sync-hook"
+version = "0.1.dev0"
+source = { directory = "sync_hook" }
